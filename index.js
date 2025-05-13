@@ -11,7 +11,19 @@ const port = 5000;
 app.use(cors());
 
 app.use(express.json());
-app.use('/api', userRoutes,recipesRoutes);
+app.use('/api', userRoutes, recipesRoutes);
+
+app.get('/api', (req, res) => {
+  res.send(`
+    <h1>Bienvenido a la API 🎉</h1>
+    <p>Rutas disponibles:</p>
+    <ul>
+      <li><a href="/api/usuarios">/api/usuarios</a></li>
+      <li><a href="/api/recetas">/api/recetas</a></li>
+    </ul>
+  `);
+});
+
 
 sequelize.sync()
   .then(() => {

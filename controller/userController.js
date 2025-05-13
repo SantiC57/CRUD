@@ -117,7 +117,7 @@ exports.getUsers = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
   const bcrypt = require("bcrypt");
-  const users = await Usuario.findAll();
+  const users = await User.findAll();
 
   for (const user of users) {
   if (!user.password.startsWith("$2b$")) {

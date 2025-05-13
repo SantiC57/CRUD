@@ -20,8 +20,8 @@ const Recipes = sequeliza.define('Recipes', {
     },
 
     imagen:{
-        type:DataTypes.BLOB,
-        allowNull:true
+        type:DataTypes.STRING,
+        allowNull:false
     },
 
     tiempo:{
