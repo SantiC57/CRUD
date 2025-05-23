@@ -24,7 +24,7 @@ exports.getRecipeById = async (req,res) => {
 };
 
 exports.createRecipe = async (req, res) => {
-    const {titulo, preparacion, ingredientes, imagen, tiempo ,usuarioId} = req.body;
+    const {titulo, preparacion, ingredientes, imagen, tiempo,categoria,coccion,usuarioId} = req.body;
     try {
         const recipes = await Recipes.create({
             titulo,
@@ -32,6 +32,8 @@ exports.createRecipe = async (req, res) => {
             ingredientes,
             imagen,
             tiempo,
+            categoria,
+            coccion,
             usuarioId
         });
         res.status(201).json(recipes);
@@ -41,7 +43,7 @@ exports.createRecipe = async (req, res) => {
 };
 
 exports.updateRecipe = async (req, res) => {
-    const {titulo, preparacion, ingredientes, imagen, tiempo ,usuarioId} = req.body;
+    const {titulo, preparacion, ingredientes, imagen, tiempo,categoria,coccion,usuarioId} = req.body;
     try {
         const recipe = await Recipes.findByPk(req.params.id);
         if (!recipe)

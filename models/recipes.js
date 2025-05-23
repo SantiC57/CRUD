@@ -29,6 +29,14 @@ const Recipes = sequeliza.define('Recipes', {
         allowNull: false
 
     },
+    categoria:{
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    coccion:{
+        type: DataTypes.STRING,
+        allowNull: true
+    },
 
     usuarioId:{
         type:DataTypes.INTEGER,
