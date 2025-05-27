@@ -50,8 +50,8 @@ app.get('/api', (req, res) => {
 });
 
 // Rutas de la aplicación
-app.use('/api/usuarios', userRoutes);
-app.use('/api/recetas', recipesRoutes);
+app.use('/api', userRoutes);
+app.use('/api', recipesRoutes);
 
 // ✅ CAMBIAR: Puerto dinámico para Railway
 const PORT = port;
