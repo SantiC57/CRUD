@@ -1,11 +1,13 @@
 const {Sequelize} = require('sequelize'); 
+const {DB_HOST,DB_USER,DB_PASSWORD,DB_NAME,DB_PORT,DB_DIALECT} = require ('../config.js'); 
 
 const sequelize = new Sequelize(
-    'Recetas',
-    'root',
-    'admin123',{
-        host:'localhost',
-        dialect:'mysql'
+    DB_NAME,
+    DB_USER,
+    DB_PASSWORD,{
+        host:DB_HOST,
+        dialect: 'mysql',
+        port: DB_PORT,
     }
 )
 

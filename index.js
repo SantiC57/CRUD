@@ -3,10 +3,10 @@ const sequelize = require('./src/database');
 const userRoutes = require('./routes/userRoutes');
 const recipesRoutes = require('./routes/recipesRoutes');
 const cors = require ('cors');
+const {port} = require ('./config.js'); 
 
 
 const app = express();
-const port = 5000;
 
 app.use(cors());
 
