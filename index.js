@@ -11,7 +11,9 @@ const app = express();
 app.use(cors());
 
 app.use(express.json());
-app.use('/api', userRoutes, recipesRoutes);
+app.use('/api/usuarios', userRoutes);
+app.use('/api/recetas', recipesRoutes);
+
 
 app.get('/api', (req, res) => {
   res.send(`
