@@ -1,15 +1,16 @@
 const {Sequelize} = require('sequelize'); 
-const {DB_HOST,DB_USER,DB_PASSWORD,DB_NAME,DB_PORT} = require ('../config.js'); 
+const {DB_HOST,DB_USER,DB_PASSWORD,DB_NAME,DB_PORT,DB_DIALECT} = require ('../config.js'); 
 
-const sequelize = new Sequelize(
-    DB_NAME,
-    DB_USER,
-    DB_PASSWORD,{
-        host:DB_HOST,
+const sequelize = new Sequelize(process.env.DATABASE_URL,{
         dialect: 'mysql',
-        port: DB_PORT,
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false // necesario si usas Railway y su base de datos
     }
-)
+  },
+  logging: false
+ })
 
 sequelize.authenticate()
     .then(() => {
