@@ -26,6 +26,7 @@ app.get('/api', (req, res) => {
 });
 
 
+
 sequelize.sync()
   .then(() => {
     console.log('Base de datos sincronizada');
