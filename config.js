@@ -1,7 +1,15 @@
-export const port = process.env.port || 5000;
+const port = process.env.port || 5000;
+const DB_HOST = process.env.DB_HOST || 'localhost';
+const DB_USER = process.env.DB_USER || 'root';
+const DB_PASSWORD = process.env.DB_PASSWORD || 'admin123';
+const DB_NAME = process.env.DB_NAME || 'Recetas';
+const DB_PORT = process.env.DB_PORT || 3306;
 
-export const DB_HOST = process.env.DB_HOST || 'localhost';
-export const DB_USER = process.env.DB_USER || 'root';
-export const DB_PASSWORD = process.env.DB_PASSWORD || 'admin123';
-export const DB_NAME = process.env.DB_NAME || 'Recetas';
-export const DB_PORT = process.env.DB_PORT || 3306;
+module.exports = {
+    port,
+    DB_HOST,
+    DB_USER,
+    DB_PASSWORD,
+    DB_NAME,
+    DB_PORT
+};
