@@ -54,7 +54,7 @@ app.use('/api/usuarios', userRoutes);
 app.use('/api/recetas', recipesRoutes);
 
 // ✅ CAMBIAR: Puerto dinámico para Railway
-const PORT = process.env.PORT || port || 5000;
+const PORT = port;
 
 sequelize.sync()
   .then(() => {
