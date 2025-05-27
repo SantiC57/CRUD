@@ -1,6 +1,7 @@
 const {Sequelize} = require('sequelize'); 
-const {DB_HOST,DB_USER,DB_PASSWORD,DB_NAME,DB_PORT,DB_DIALECT} = require ('../config.js'); 
+const {DB_HOST,DB_USER,DB_PASSWORD,DB_NAME,DB_PORT,DATABASE_URL} = require ('../config.js'); 
 
+let sequelize;
 
 if (DATABASE_URL) {
     sequelize = new Sequelize(DATABASE_URL, {
@@ -15,7 +16,7 @@ if (DATABASE_URL) {
     });
 }
 else {
-const sequelize = new Sequelize(
+sequelize = new Sequelize(
     DB_NAME,
     DB_USER,
     DB_PASSWORD, {
