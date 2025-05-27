@@ -5,7 +5,6 @@ const recipesRoutes = require('./routes/recipesRoutes');
 const cors = require ('cors');
 const {port} = require ('./config.js'); 
 
-
 const app = express();
 
 app.use(cors());
